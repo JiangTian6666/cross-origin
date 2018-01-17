@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>A站</title>
+	<style>
+	  	#wrap{
+	  		text-align: center;
+	  	}
+	 	h1{
+	 		font-size: 30px;
+	 		font-weight: 400; 
+	 	}
+	 	#btn{
+	 		display: inline-block;
+	 		border: none;
+	 		border-radius: 5px;
+	 		background: #666;
+	 		color: #fff;
+	 		padding: 10px 40px;
+	 		margin: 50px; 
+	 	}
+	 	#btn:hover{
+	 		background: red;
+	 	}
+    </style>
+</head>
+<body>
+	<div id="wrap">
+		<h1>我是A站</h1>
+		<button id="btn">点击变颜色</button>
+	</div>	
+	<script>
+		var btn = document.querySelector("#btn");
+		btn.addEventListener("click",fn);
+		function fn() {
+			var script = document.createElement("script");
+			script.src="http://b.com:8080/getcolor?type=setColor";
+			document.body.appendChild(script);
+		}
+		function setColor(tinct){
+			var h1 = document.querySelector("h1");
+			h1.style.color = tinct;
+		}
+	</script>	
+</body>
+</html>
